@@ -94,6 +94,31 @@ def courses(request):
     }
     return render(request, 'pages/courses.html', context)
 
+def course_detail(request, course_slug):
+    try:
+        course = Course.objects.get(link=course_slug)
+    except Course.DoesNotExist:
+        # Try to find by title slug if link doesn't match
+        course = None
+        for c in Course.objects.all():
+            if c.link and c.link.lower().replace(' ', '-').replace('/', '') == course_slug:
+                course = c
+                break
+
+        if not course:
+            from django.http import Http404
+            raise Http404("Course not found")
+
+    newsletter_form = NewsletterForm()
+    context = {
+        'course': course,
+        'page_title': course.title,
+        'page_subtitle': 'Course Details',
+        'page_content': f'<p>{course.description}</p><p><strong>Duration:</strong> Contact us for details<br><strong>Mode:</strong> Online/Classroom<br><strong>Certification:</strong> Upon completion</p>',
+        'newsletter_form': newsletter_form,
+    }
+    return render(request, 'courses/course_detail.html', context)
+
 def courses_topup(request):
     newsletter_form = NewsletterForm()
     context = {

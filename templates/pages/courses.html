@@ -37,7 +37,7 @@
                         <b><span class="you2">{{ course.title }}</span></b>
                         <p class="mb-0">{{ course.description }}</p>
                         {% if course.link %}
-                        <a class="text-uppercase" href="{{ course.link }}">Get information <i class="bi bi-arrow-right"></i></a>
+                        <a class="text-uppercase" href="{% url 'course_detail' course.link %}">Get information <i class="bi bi-arrow-right"></i></a>
                         {% endif %}
                     </div>
                     {% endif %}
@@ -47,7 +47,7 @@
 
             <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static 'img/class.jpg' %}" style="object-fit: cover;" alt="international admission processing">
+                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static 'img/class.jpg' %}" style="object-fit: cover;" alt="international admission processing" loading="lazy">
                 </div>
             </div>
 
@@ -62,7 +62,7 @@
                         <b><span class="you2">{{ course.title }}</span></b>
                         <p class="mb-0">{{ course.description }}</p>
                         {% if course.link %}
-                        <a class="text-uppercase" href="{{ course.link }}">Get information <i class="bi bi-arrow-right"></i></a>
+                        <a class="text-uppercase" href="{% url 'course_detail' course.link %}">Get information <i class="bi bi-arrow-right"></i></a>
                         {% endif %}
                     </div>
                     {% endif %}

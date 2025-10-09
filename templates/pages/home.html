@@ -156,7 +156,7 @@
                     </div>
                     <div class="ps-4">
                         <span class="mb-2 you2">Call to ask any question</span><br>
-                        <span class="text-primary mb-0 you2">+234 8083158563</span>
+                        <span class="text-primary mb-0 you2">+234 8083158563 <br>+234 8108844510</span>
                     </div>
                 </div>
                 <a href="{% url "quote" %}" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Request A Quote</a>
@@ -198,7 +198,7 @@
                 <div class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">
                     <h3 class="text-white mb-3">Call Us For Quote</h3>
                     <p class="text-white mb-3">You can call us or send a message for any of our services</p>
-                    <h4 class="text-white mb-0">+234 8083158563</h4>
+                    <h4 class="text-white mb-0">+234 8083158563<br>+234 8108844510</h4>
                     <a class="btn btn-lg btn-primary rounded" href="#">
                         <i class="bi bi-arrow-right"></i>
                     </a>
@@ -229,7 +229,7 @@
                         <b><span class="you2">{{ course.title }}</span></b>
                         <p class="mb-0">{{ course.description }}</p>
                         {% if course.link %}
-                        <a class="text-uppercase" href="{{ course.link }}">Get information <i class="bi bi-arrow-right"></i></a>
+                        <a class="text-uppercase" href="{% url 'course_detail' course.link %}">Get information <i class="bi bi-arrow-right"></i></a>
                         {% endif %}
                     </div>
                     {% endif %}
@@ -254,7 +254,7 @@
                         <b><span class="you2">{{ course.title }}</span></b>
                         <p class="mb-0">{{ course.description }}</p>
                         {% if course.link %}
-                        <a class="text-uppercase" href="{{ course.link }}">Get information <i class="bi bi-arrow-right"></i></a>
+                        <a class="text-uppercase" href="{% url 'course_detail' course.link %}">Get information <i class="bi bi-arrow-right"></i></a>
                         {% endif %}
                     </div>
                     {% endif %}

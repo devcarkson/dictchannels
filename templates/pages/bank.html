@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Bank Account Details - D-ICT CHANNELS{% endblock %}
+
+{% block header %}
+<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+    <div class="row py-5">
+        <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">Bank Account Details</h1>
+            <a href="{% url 'home' %}" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="#" class="h5 text-white">Bank Account Details</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Page Content Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-12">
+                <div class="section-title position-relative pb-3 mb-5">
+                    <h5 class="fw-bold text-primary text-uppercase">Bank Account Details</h5>
+                    <h2 class="mb-0">Payment Information</h2>
+                </div>
+                <div class="content">
+                    <p>For your convenience, here are our bank account details for course payments and other transactions.</p>
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="bg-light p-4 rounded">
+                                <h5>Bank Name: Access Bank PLC</h5>
+                                <p><strong>Account Name:</strong> D-ICT CHANNELS</p>
+                                <p><strong>Account Number:</strong> 1234567890</p>
+                                <p><strong>Account Type:</strong> Current Account</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="bg-light p-4 rounded">
+                                <h5>Bank Name: Zenith Bank PLC</h5>
+                                <p><strong>Account Name:</strong> D-ICT CHANNELS</p>
+                                <p><strong>Account Number:</strong> 0987654321</p>
+                                <p><strong>Account Type:</strong> Current Account</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p><strong>Note:</strong> Please include your full name and course name in the payment description for easy identification.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page Content End -->
+
+
+{% endblock %}

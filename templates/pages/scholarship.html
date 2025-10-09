@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Quarterly Scholarship - D-ICT CHANNELS{% endblock %}
+
+{% block header %}
+<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+    <div class="row py-5">
+        <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">Quarterly Scholarship</h1>
+            <a href="{% url 'home' %}" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="#" class="h5 text-white">Quarterly Scholarship</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Page Content Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-12">
+                <div class="section-title position-relative pb-3 mb-5">
+                    <h5 class="fw-bold text-primary text-uppercase">Quarterly Scholarship</h5>
+                    <h2 class="mb-0">Financial Support for Education</h2>
+                </div>
+                <div class="content">
+                    <p>Our Quarterly Scholarship program is designed to support and empower students by providing financial assistance for their education.</p>
+                    <p><strong>Frequency:</strong> Quarterly<br><strong>Benefits:</strong> Fee discounts and waivers<br><strong>Eligibility:</strong> Based on merit and need</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Content End -->
+
+
+{% endblock %}

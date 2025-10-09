@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Testimonials - D-ICT CHANNELS{% endblock %}
+
+{% block header %}
+<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+    <div class="row py-5">
+        <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">Testimonials</h1>
+            <a href="{% url 'home' %}" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="#" class="h5 text-white">Testimonials</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Testimonial Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
+            <h5 class="fw-bold text-primary text-uppercase">Testimonials</h5>
+            <h2 class="mb-0">What Our Students Say About Our Services</h2>
+        </div>
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
+            {% for testimonial in testimonials %}
+            <div class="testimonial-item bg-white rounded shadow-sm p-4 mx-2" style="border-left: 4px solid #eb6424;">
+                <div class="d-flex align-items-center mb-4">
+                    <div class="position-relative">
+                        <img class="img-fluid rounded-circle border border-3 border-primary" src="{% if testimonial.image %}{{ testimonial.image.url }}{% else %}{% static 'img/testimonial-4.jpg' %}{% endif %}" alt="{{ testimonial.name }}" style="width: 70px; height: 70px; object-fit: cover;">
+                        <div class="position-absolute" style="bottom: -5px; right: -5px; background: #eb6424; border-radius: 50%; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-quote-left text-white" style="font-size: 12px;"></i>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-1 text-primary fw-bold">{{ testimonial.name }}</h6>
+                        <small class="text-muted text-uppercase">{{ testimonial.profession }}</small>
+                        <div class="mt-1">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0 text-muted fst-italic">"{{ testimonial.text }}"</p>
+            </div>
+            {% empty %}
+            <div class="testimonial-item bg-white rounded shadow-sm p-4 mx-2" style="border-left: 4px solid #eb6424;">
+                <div class="d-flex align-items-center mb-4">
+                    <div class="position-relative">
+                        <img class="img-fluid rounded-circle border border-3 border-primary" src="{% static 'img/testimonial-4.jpg' %}" alt="Sample Student" style="width: 70px; height: 70px; object-fit: cover;">
+                        <div class="position-absolute" style="bottom: -5px; right: -5px; background: #eb6424; border-radius: 50%; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-quote-left text-white" style="font-size: 12px;"></i>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-1 text-primary fw-bold">Sample Student</h6>
+                        <small class="text-muted text-uppercase">Student</small>
+                        <div class="mt-1">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0 text-muted fst-italic">"No testimonials available yet. Add testimonials through the Django admin panel to display them here."</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+<!-- Stats Section Start -->
+<div class="container-fluid facts py-5 pt-lg-0">
+    <div class="container py-5 pt-lg-0">
+        <div class="row gx-0">
+            <div class="col-lg-3 wow zoomIn" data-wow-delay="0.1s">
+                <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                    <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                        <i class="fa fa-users text-primary"></i>
+                    </div>
+                    <div class="ps-4">
+                        <span class="text-white mb-0">Happy Students</span><br>
+                        <span class="text-white mb-0" data-toggle="counter-up">5000</span><span class="text-white">+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 wow zoomIn" data-wow-delay="0.3s">
+                <div class="bg-light shadow d-flex align-items-center justify-content-center p-4 ky">
+                    <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                        <i class="fa fa-check text-white"></i>
+                    </div>
+                    <div class="ps-4">
+                        <span class="text-primary mb-0">Projects Completed</span><br>
+                        <span class="mb-0" data-toggle="counter-up">1000</span><span>+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 wow zoomIn" data-wow-delay="0.6s">
+                <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                    <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                        <i class="fa fa-award text-primary"></i>
+                    </div>
+                    <div class="ps-4">
+                        <span class="text-white mb-0">Success Rate</span><br>
+                        <span class="text-white mb-0" data-toggle="counter-up">95</span><span class="text-white">%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 wow zoomIn" data-wow-delay="0.9s">
+                <div class="bg-light shadow d-flex align-items-center justify-content-center p-4 ky">
+                    <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                        <i class="fa fa-star text-white"></i>
+                    </div>
+                    <div class="ps-4">
+                        <span class="text-primary mb-0">Average Rating</span><br>
+                        <span class="mb-0" data-toggle="counter-up">4.9</span><span>/5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Stats Section End -->
+
+{% endblock %}

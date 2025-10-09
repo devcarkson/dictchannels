@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Professional Computer Training - D-ICT CHANNELS{% endblock %}
+
+{% block header %}
+<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+    <div class="row py-5">
+        <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">Professional Computer Training</h1>
+            <a href="{% url 'home' %}" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="#" class="h5 text-white">Training</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Training Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <div class="section-title position-relative pb-3 mb-5">
+                    <h5 class="fw-bold text-primary text-uppercase">Professional IT Training</h5>
+                    <h2 class="mb-0">100% Practical Training Programs</h2>
+                </div>
+                <p class="mb-4">
+                    We offer professional computer training designed to equip individuals and teams with the skills
+                    needed to thrive in today's tech-driven world. Our comprehensive programs cover everything from
+                    basic computing to advanced technologies.
+                </p>
+                <div class="row g-0 mb-3">
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                        <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Hands-on Learning</h5>
+                        <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Industry Experts</h5>
+                    </div>
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                        <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Job Placement</h5>
+                        <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Certification</h5>
+                    </div>
+                </div>
+                <a href="{% url 'courses' %}" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">
+                    View Our Courses
+                </a>
+            </div>
+            <div class="col-lg-5" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s"
+                        src="{% static 'img/training.webp' %}" style="object-fit: cover;" alt="Professional Computer Training">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Training End -->
+
+<!-- Training Programs Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <h5 class="fw-bold text-primary text-uppercase">Our Training Programs</h5>
+            <h2 class="mb-0">Comprehensive IT Education</h2>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="bg-light p-4 rounded">
+                    <h4 class="text-primary mb-4">Programming Languages</h4>
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fab fa-python text-primary me-3"></i>
+                                <span>Python Programming</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fab fa-java text-primary me-3"></i>
+                                <span>Java Development</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-code text-primary me-3"></i>
+                                <span>C# .NET Programming</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fab fa-js text-primary me-3"></i>
+                                <span>JavaScript & Frameworks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bg-light p-4 rounded">
+                    <h4 class="text-primary mb-4">Specialized Training</h4>
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-chart-bar text-primary me-3"></i>
+                                <span>Data Science & Analytics</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-shield-alt text-primary me-3"></i>
+                                <span>Cybersecurity</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-cloud text-primary me-3"></i>
+                                <span>Cloud Computing</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-cogs text-primary me-3"></i>
+                                <span>DevOps</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Training Programs End -->
+
+<!-- Why Choose Us Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h5 class="fw-bold text-primary text-uppercase">WHY CHOOSE US</h5>
+            <h2 class="mb-0">Why Choose D-ICT CHANNELS for Training</h2>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 text-center wow zoomIn" data-wow-delay="0.1s">
+                <div class="bg-white rounded p-4 shadow-sm h-100">
+                    <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                    <h5>Expert Instructors</h5>
+                    <p class="mb-0">Learn from certified professionals with years of industry experience.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center wow zoomIn" data-wow-delay="0.3s">
+                <div class="bg-white rounded p-4 shadow-sm h-100">
+                    <i class="fas fa-laptop-code fa-3x text-primary mb-3"></i>
+                    <h5>Practical Learning</h5>
+                    <p class="mb-0">100% hands-on training with real-world projects and applications.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center wow zoomIn" data-wow-delay="0.6s">
+                <div class="bg-white rounded p-4 shadow-sm h-100">
+                    <i class="fas fa-certificate fa-3x text-primary mb-3"></i>
+                    <h5>Industry Certification</h5>
+                    <p class="mb-0">Prepare for and earn recognized industry certifications.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center wow zoomIn" data-wow-delay="0.9s">
+                <div class="bg-white rounded p-4 shadow-sm h-100">
+                    <i class="fas fa-briefcase fa-3x text-primary mb-3"></i>
+                    <h5>Job Placement</h5>
+                    <p class="mb-0">Career guidance and assistance with job placement opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Why Choose Us End -->
+
+{% endblock %}

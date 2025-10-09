@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Team Members - D-ICT CHANNELS{% endblock %}
+
+{% block header %}
+<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+    <div class="row py-5">
+        <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">Team Members</h1>
+            <a href="{% url 'home' %}" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="#" class="h5 text-white">Team</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Team Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <h5 class="fw-bold text-primary text-uppercase">Our Team</h5>
+            <h2 class="mb-0">Meet Our Expert Team Members</h2>
+        </div>
+
+        <div class="row g-5">
+            {% for member in team_members %}
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="{{ forloop.counter0|add:1|floatformat:'1'|add:'0.1s' }}">
+                <div class="team-item bg-light rounded overflow-hidden shadow-sm">
+                    {% if member.image %}
+                        <img src="{{ member.image.url }}" alt="{{ member.name }}" class="w-100" style="height: 250px; object-fit: cover;">
+                    {% else %}
+                        <div class="bg-primary d-flex align-items-center justify-content-center" style="height: 250px;">
+                            <i class="fa fa-user-tie fa-4x text-white"></i>
+                        </div>
+                    {% endif %}
+                    <div class="p-4 text-center">
+                        <h4 class="mb-1">{{ member.name }}</h4>
+                        <h6 class="text-primary mb-3">{{ member.designation }}</h6>
+                        {% if member.bio %}
+                            <p class="mb-0 text-muted">{{ member.bio }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p class="text-muted">No team members available at the moment. Please check back later.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Team End -->
+
+
+{% endblock %}

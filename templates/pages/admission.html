@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}International University Admission - D-ICT CHANNELS{% endblock %}
+
+{% block header %}
+<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+    <div class="row py-5">
+        <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">International University Admission</h1>
+            <a href="{% url 'home' %}" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="#" class="h5 text-white">International University Admission</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Page Content Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-12">
+                <div class="section-title position-relative pb-3 mb-5">
+                    <h5 class="fw-bold text-primary text-uppercase">International University Admission</h5>
+                    <h2 class="mb-0">Your Gateway to Global Education</h2>
+                </div>
+                <div class="content">
+                    <p>We help students secure admission from different countries to apply for and enroll in higher education abroad, including America, Canada, UK, and more.</p>
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="bg-light p-4 rounded">
+                                <h5>🎓 University Applications</h5>
+                                <p>Complete application assistance for top universities worldwide.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="bg-light p-4 rounded">
+                                <h5>📋 Visa Processing</h5>
+                                <p>Guidance and support for student visa applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h5>Countries We Support:</h5>
+                        <ul>
+                            <li>United States of America</li>
+                            <li>United Kingdom</li>
+                            <li>Canada</li>
+                            <li>Australia</li>
+                            <li>Germany</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Content End -->
+
+
+{% endblock %}

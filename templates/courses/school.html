@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Tech 4 Schools Programs - D-ICT CHANNELS{% endblock %}
+
+{% block header %}
+<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+    <div class="row py-5">
+        <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">Tech 4 Schools Programs</h1>
+            <a href="{% url 'home' %}" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="{% url 'courses' %}" class="h5 text-white">Courses</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="#" class="h5 text-white">Tech 4 Schools Programs</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Page Content Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-12">
+                <div class="section-title position-relative pb-3 mb-5">
+                    <h5 class="fw-bold text-primary text-uppercase">Tech 4 Schools Programs</h5>
+                    <h2 class="mb-0">IT Education for Young Minds</h2>
+                </div>
+                <div class="content">
+                    <p>The Tech 4 Schools program is designed for students in grades 1-12 to enable them to have IT skills. Age-appropriate curriculum for young learners.</p>
+                    <p><strong>Age Group:</strong> Grades 1-12<br><strong>Focus:</strong> Basic to advanced computing skills<br><strong>Methodology:</strong> Interactive and fun learning</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Content End -->
+
+
+{% endblock %}

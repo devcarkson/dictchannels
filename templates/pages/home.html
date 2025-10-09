@@ -1,0 +1,370 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Software Development, Professional Computer Training{% endblock %}
+
+{% block header %}
+<div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="w-100" src="{% static 'img/software.jpg' %}" title="professional software development" alt="software development company">
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                <div class="p-3" style="max-width: 900px;">
+                    <span class="text-white text-uppercase mb-3 animated slideInDown you2">Software Development</span><br>
+                    <span class="display-3 text-white mb-md-4 animated zoomIn xy">Mobile App, Web App & Desktop App</span><br>
+                    <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Software Quote</a>
+                    <a href="#" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Software Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="w-100" src="{% static 'img/training.webp' %}" title="professional computer training" alt="professional computer training">
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                <div class="p-3" style="max-width: 900px;">
+                    <span class="text-white text-uppercase mb-3 animated slideInDown you2">Professional IT Training</span><br>
+                    <span class="display-3 text-white mb-md-4 animated zoomIn xy">Professional Computer & IT Training</span><br>
+                    <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Training Quote</a>
+                    <a href="#" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Training Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="w-100" src="{% static 'img/digital.jpg' %}" alt="digital advertising">
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                <div class="p-3" style="max-width: 900px;">
+                    <span class="text-white text-uppercase mb-3 animated slideInDown you2">Digital Advertising</span><br>
+                    <span class="display-3 text-white mb-md-4 animated zoomIn xy">Digital Advertising & Business Branding</span><br>
+                    <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Digital Quote</a>
+                    <a href="#" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Digital Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="w-100" src="{% static 'img/admission.jpg' %}" alt="digital branding">
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                <div class="p-3" style="max-width: 900px;">
+                    <span class="text-white text-uppercase mb-3 animated slideInDown you2">Admission Processing</span><br>
+                    <span class="display-3 text-white mb-md-4 animated zoomIn xy">International University Processing</span><br>
+                    <a href="{% url "quote" %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Admission Quote</a>
+                    <a href="{% url "software" %}" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Admission Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Facts Start -->
+<div class="container-fluid facts py-5 pt-lg-0">
+    <div class="container py-5 pt-lg-0">
+        <div class="row gx-0">
+            <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
+                <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                    <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                        <i class="fa fa-users text-primary"></i>
+                    </div>
+                    <div class="ps-4">
+                        <span class="text-white mb-0 ola">Our Partners</span><br>
+                        <span class="text-white mb-0 you" data-toggle="counter-up">80</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
+                <div class="bg-light shadow d-flex align-items-center justify-content-center p-4 ky">
+                    <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                        <i class="fa fa-check text-white"></i>
+                    </div>
+                    <div class="ps-4">
+                        <span class="text-primary mb-0 ola">Projects Done</span><br>
+                        <span class="mb-0 you" data-toggle="counter-up">100</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
+                <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                    <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                        <i class="fa fa-award text-primary"></i>
+                    </div>
+                    <div class="ps-4">
+                        <span class="text-white mb-0 ola">D-ICT Courses</span><br>
+                        <span class="text-white mb-0 you" data-toggle="counter-up">162</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Facts End -->
+
+<!-- About Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <div class="section-title position-relative pb-3 mb-5">
+                    <span class="fw-bold text-primary text-uppercase you2">Who We Are</span> <br>
+                    <span class="mb-0 you">The Best IT Solution Company With Over 15 Years of Experience</span>
+                </div>
+                <p class="mb-4">
+                    At D-ICT CHANNELS, we are passionate about empowering individuals and businesses through technology.
+                    As a leading provider of professional computer training, we deliver cutting-edge courses designed to help
+                    our clients stay ahead in today's fast-paced digital world.
+                    <br>
+                    Founded with the vision of bridging the gap between technological advancements and practical application,
+                    D-ICT CHANNELS offers a wide range of specialized training programs. Whether you're a beginner
+                    looking to develop foundational IT skills or a professional aiming to enhance your expertise, our courses
+                    are tailored to meet your unique needs.
+                    <br>
+                    Our Mission is to foster innovation and learning by providing high-quality, hands-on training. We believe in the power
+                    of education to transform careers, improve business efficiency, and drive technological progress.
+                    <br>
+                    With a team of experienced and certified instructors, we provide a dynamic learning environment where theory
+                    meets real-world application. Our approach is not just about teaching—it is about cultivating a deeper understanding
+                    of technology that leads to tangible results.
+                    <br>
+                    <ul>
+                        <span class="you2"> Why Choose Us?</span>
+                        <li>Industry-aligned curriculum</li>
+                        <li>Flexible learning options (online & in-person)</li>
+                        <li>Personalized attention for every learner</li>
+                        <li>A track record of successful career transformations</li>
+                    </ul>
+                    At D-ICT CHANNELS, we are not just about imparting knowledge; we are about shaping the tech innovators and leaders of tomorrow.
+                </p>
+                <div class="row g-0 mb-3">
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                        <span class="mb-3 ola"><i class="fa fa-check text-primary me-3"></i>Award Winning</span><br>
+                        <span class="mb-3 ola"><i class="fa fa-check text-primary me-3"></i>Professional Staff</span>
+                    </div>
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                        <span class="mb-3 ola"><i class="fa fa-check text-primary me-3"></i>24/7 Support</span><br>
+                        <span class="mb-3 ola"><i class="fa fa-check text-primary me-3"></i>Fair Prices</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+                    <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                        <i class="fa fa-phone-alt text-white"></i>
+                    </div>
+                    <div class="ps-4">
+                        <span class="mb-2 you2">Call to ask any question</span><br>
+                        <span class="text-primary mb-0 you2">+234 8083158563</span>
+                    </div>
+                </div>
+                <a href="{% url "quote" %}" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Request A Quote</a>
+            </div>
+            <div class="col-lg-5" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{% static 'img/about1.jpg' %}" style="object-fit: cover;" alt="software development">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+<!-- Service Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
+            <h1 class="mb-0">Custom IT Solutions for Your Successful Business</h1>
+        </div>
+
+        <div class="row g-5">
+            {% for service in services %}
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <div class="service-icon">
+                        <i class="{{ service.icon }} text-white"></i>
+                    </div>
+                    <h6 class="mb-3">{{ service.title }}</h6>
+                    <p class="m-0">{{ service.description }}</p>
+                    <a class="btn btn-lg btn-primary rounded" href="{% if service.page %}{% url service.page %}{% else %}#{% endif %}">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                <div class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">
+                    <h3 class="text-white mb-3">Call Us For Quote</h3>
+                    <p class="text-white mb-3">You can call us or send a message for any of our services</p>
+                    <h4 class="text-white mb-0">+234 8083158563</h4>
+                    <a class="btn btn-lg btn-primary rounded" href="#">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+
+<!-- training Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <span class="fw-bold text-primary text-uppercase you2">Professional Computer Training</span><br>
+            <span class="mb-0 you">We Offer 100% Practical Training</span>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <div class="row g-5">
+                    {% for course in courses %}
+                    {% if forloop.counter <= 4 %}
+                    <div class="col-12 wow zoomIn" data-wow-delay="0.2s">
+                        <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3 ty">
+                            <i class="fa fa-award text-white"></i>
+                        </div>
+                        <b><span class="you2">{{ course.title }}</span></b>
+                        <p class="mb-0">{{ course.description }}</p>
+                        {% if course.link %}
+                        <a class="text-uppercase" href="{{ course.link }}">Get information <i class="bi bi-arrow-right"></i></a>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static 'img/class.jpg' %}" style="object-fit: cover;" alt="international admission processing">
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="row g-5">
+                    {% for course in courses %}
+                    {% if forloop.counter > 4 %}
+                    <div class="col-12 wow zoomIn" data-wow-delay="0.2s">
+                        <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3 ty">
+                            <i class="fa fa-award text-white"></i>
+                        </div>
+                        <b><span class="you2">{{ course.title }}</span></b>
+                        <p class="mb-0">{{ course.description }}</p>
+                        {% if course.link %}
+                        <a class="text-uppercase" href="{{ course.link }}">Get information <i class="bi bi-arrow-right"></i></a>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- training End -->
+
+
+<!-- events Start -->
+{% comment %} <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <span class="fw-bold text-primary text-uppercase you2"> D-ICT Events</span> <br>
+            <span class="mb-0 you"> Get Ready to Dive into the World of Technology at our Upcoming IT Event </span>
+        </div>
+        <div class="row g-5">
+            {% for event in events %}
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <div class="service-icon">
+                        <i class="fa fa-shield-alt text-white"></i>
+                    </div>
+                    <h6 class="mb-3 ola"> <b> {{ event.title }} </b></h6>
+                    <p class="m-0">{{ event.description }}</p>
+                    <a class="btn btn-lg btn-primary rounded" href="{{ event.link }}">
+                        <i class="bi bi-arrow-right"></i>
+                        <span class="sr-only">{{ event.title|lower }}</span>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                <div class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">
+                    <b class="text-white mb-3">Speak with our experts</b>
+                    <p class="text-white mb-3">You can call us or send a message for any of our services</p>
+                    <span class="text-white mb-0 ola">+234 8083158563</span>
+                    <a class="btn btn-lg btn-primary rounded" href="#">
+                        <i class="bi bi-arrow-right"></i>
+                        <span class="sr-only">what7sap2</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+<!-- events End -->
+
+<!-- Testimonial Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
+            <h5 class="fw-bold text-primary text-uppercase">Testimonials</h5>
+            <h2 class="mb-0">What Our Students Say About Our Services</h2>
+        </div>
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
+            {% for testimonial in testimonials %}
+            <div class="testimonial-item bg-white rounded shadow-sm p-4 mx-2" style="border-left: 4px solid #eb6424;">
+                <div class="d-flex align-items-center mb-4">
+                    <div class="position-relative">
+                        <img class="img-fluid rounded-circle border border-3 border-primary" src="{% if testimonial.image %}{{ testimonial.image.url }}{% else %}{% static 'img/testimonial-4.jpg' %}{% endif %}" alt="{{ testimonial.name }}" style="width: 70px; height: 70px; object-fit: cover;">
+                        <div class="position-absolute" style="bottom: -5px; right: -5px; background: #eb6424; border-radius: 50%; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-quote-left text-white" style="font-size: 12px;"></i>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-1 text-primary fw-bold">{{ testimonial.name }}</h6>
+                        <small class="text-muted text-uppercase">{{ testimonial.profession }}</small>
+                        <div class="mt-1">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0 text-muted fst-italic">"{{ testimonial.text }}"</p>
+            </div>
+            {% empty %}
+            <div class="testimonial-item bg-white rounded shadow-sm p-4 mx-2" style="border-left: 4px solid #eb6424;">
+                <div class="d-flex align-items-center mb-4">
+                    <div class="position-relative">
+                        <img class="img-fluid rounded-circle border border-3 border-primary" src="{% static 'img/testimonial-4.jpg' %}" alt="Sample Student" style="width: 70px; height: 70px; object-fit: cover;">
+                        <div class="position-absolute" style="bottom: -5px; right: -5px; background: #eb6424; border-radius: 50%; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-quote-left text-white" style="font-size: 12px;"></i>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-1 text-primary fw-bold">Sample Student</h6>
+                        <small class="text-muted text-uppercase">Student</small>
+                        <div class="mt-1">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0 text-muted fst-italic">"No testimonials available yet. Add testimonials through the Django admin panel to display them here."</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+
+{% endblock %}

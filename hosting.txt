@@ -15,6 +15,4 @@ application = get_wsgi_application()
 
 pulling latest changes from remote repo
 
-git stash
-git pull origin main
-git stash pop
+git fetch origin && git reset --hard origin/main

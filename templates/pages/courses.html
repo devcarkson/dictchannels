@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Our Courses - D-ICT CHANNELS{% endblock %}
+{% block title %}IT Courses & Training Programs - D-ICT CHANNELS Lagos, Nigeria{% endblock %}
+
+{% block meta_description %}Explore comprehensive IT training courses at D-ICT CHANNELS. Professional computer training programs including software development, cybersecurity, data science, and digital marketing. Hands-on training in Lagos.{% endblock %}
+
+{% block meta_keywords %}IT courses Lagos, computer training Nigeria, software development training, cybersecurity courses, data science training, digital marketing certification, professional IT programs, Festac Town training institute{% endblock %}
+
+{% block canonical_url %}courses/{% endblock %}
 
 {% block header %}
 <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
@@ -14,6 +20,57 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_head %}
+<!-- Course Schema Markup -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "D-ICT CHANNELS Training Courses",
+    "description": "Professional IT training courses and certification programs offered by D-ICT CHANNELS in Lagos, Nigeria.",
+    "numberOfItems": "{{ courses|length }}",
+    "itemListElement": [
+        {% for course in courses %}
+        {
+            "@type": "Course",
+            "position": {{ forloop.counter }},
+            "name": "{{ course.title }}",
+            "description": "{{ course.description }}",
+            "provider": {
+                "@type": "EducationalOrganization",
+                "name": "D-ICT CHANNELS",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Festac Town",
+                    "addressRegion": "Lagos",
+                    "addressCountry": "NG"
+                }
+            },
+            "educationalLevel": "Professional Training",
+            "teaches": "{{ course.description }}",
+            "url": "https://dictchannels.com{% url 'course_detail' course.link %}"
+        }{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    ]
+}
+</script>
+
+<!-- Open Graph Meta Tags for Courses Page -->
+<meta property="og:title" content="IT Courses & Training Programs - D-ICT CHANNELS Lagos, Nigeria">
+<meta property="og:description" content="Explore comprehensive IT training courses at D-ICT CHANNELS. Professional computer training programs including software development, cybersecurity, data science, and digital marketing. Hands-on training in Lagos.">
+<meta property="og:image" content="https://dictchannels.com/static/img/class.jpg">
+<meta property="og:url" content="https://dictchannels.com/courses/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="D-ICT CHANNELS">
+
+<!-- Twitter Card Meta Tags for Courses Page -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IT Courses & Training Programs - D-ICT CHANNELS Lagos, Nigeria">
+<meta name="twitter:description" content="Explore comprehensive IT training courses at D-ICT CHANNELS. Professional computer training programs including software development, cybersecurity, data science, and digital marketing.">
+<meta name="twitter:image" content="https://dictchannels.com/static/img/class.jpg">
+<meta name="twitter:site" content="@D_ICT_CHANNELS">
 {% endblock %}
 
 {% block content %}
@@ -47,7 +104,7 @@
 
             <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static 'img/class.jpg' %}" style="object-fit: cover;" alt="international admission processing" loading="lazy">
+                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static 'img/class.jpg' %}" style="object-fit: cover;" alt="IT training classroom at D-ICT CHANNELS Lagos" title="Professional computer training facility in Festac Town" loading="lazy">
                 </div>
             </div>
 

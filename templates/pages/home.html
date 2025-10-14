@@ -1,46 +1,103 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Software Development, Professional Computer Training{% endblock %}
+{% block title %}D-ICT CHANNELS - Professional IT Training, Software Development & Digital Solutions{% endblock %}
+
+{% block meta_description %}Leading IT training institute in Nigeria offering professional computer courses, software development, digital advertising, and international admission processing. Transform your career with expert-led training.{% endblock %}
+
+{% block meta_keywords %}IT training Nigeria, software development Lagos, computer courses Festac, digital marketing training, international admission processing, professional IT certification, web development courses, mobile app development training{% endblock %}
+
+{% block canonical_url %}/{% endblock %}
+
+{% block extra_head %}
+<!-- Homepage Schema Markup -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "D-ICT CHANNELS - Professional IT Training & Software Development",
+    "description": "Leading IT training institute in Nigeria offering professional computer training, software development, digital advertising, and international admission processing services.",
+    "url": "https://dictchannels.com",
+    "mainEntity": {
+        "@type": "EducationalOrganization",
+        "name": "D-ICT CHANNELS",
+        "description": "Professional IT training institute providing comprehensive technology education and software development services.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "4th Avenue, 1st Floor, Suite 15, Camet Star Plaza, Beside FCMB Bank",
+            "addressLocality": "Festac Town",
+            "addressRegion": "Lagos",
+            "addressCountry": "NG"
+        },
+        "telephone": "+234-8083158563",
+        "email": "info@dictchannels.com"
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dictchannels.com"
+        }]
+    }
+}
+</script>
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="D-ICT CHANNELS - Professional IT Training, Software Development & Digital Solutions">
+<meta property="og:description" content="Leading IT training institute in Nigeria offering professional computer training, software development, digital advertising, and international admission processing. Transform your career with expert-led training.">
+<meta property="og:image" content="https://dictchannels.com/static/img/logo.jpg">
+<meta property="og:url" content="https://dictchannels.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="D-ICT CHANNELS">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="D-ICT CHANNELS - Professional IT Training, Software Development & Digital Solutions">
+<meta name="twitter:description" content="Leading IT training institute in Nigeria offering professional computer training, software development, digital advertising, and international admission processing.">
+<meta name="twitter:image" content="https://dictchannels.com/static/img/logo.jpg">
+<meta name="twitter:site" content="@D_ICT_CHANNELS">
+{% endblock %}
 
 {% block header %}
 <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="w-100" src="{% static 'img/software.jpg' %}" title="professional software development" alt="software development company">
+            <img class="w-100" src="{% static 'img/software.jpg' %}" title="Professional Software Development Services - D-ICT CHANNELS" alt="Custom software development company in Lagos, Nigeria - mobile apps, web apps, desktop applications">
             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                 <div class="p-3" style="max-width: 900px;">
                     <span class="text-white text-uppercase mb-3 animated slideInDown you2">Software Development</span><br><br>
                     <span class="display-3 text-white mb-md-4 animated zoomIn xy">Mobile App, Web App & Desktop App</span><br><br><br><br>
-                    <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Software Quote</a>
-                    <a href="#" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Software Details</a>
+                    <a href="{% url 'quote' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Software Quote</a>
+                    <a href="{% url 'software' %}" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Software Details</a>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="w-100" src="{% static 'img/training.webp' %}" title="professional computer training" alt="professional computer training">
+            <img class="w-100" src="{% static 'img/training.webp' %}" title="Professional IT Training Institute in Lagos" alt="Professional computer training and IT certification courses in Festac Town, Lagos, Nigeria">
             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                 <div class="p-3" style="max-width: 900px;">
                     <span class="text-white text-uppercase mb-3 animated slideInDown you2">Professional IT Training</span><br><br>
                     <span class="display-3 text-white mb-md-4 animated zoomIn xy">Professional Computer & IT Training</span><br><br><br><br>
-                    <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Training Quote</a>
-                    <a href="#" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Training Details</a>
+                    <a href="{% url 'quote' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Training Quote</a>
+                    <a href="{% url 'training' %}" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Training Details</a>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="w-100" src="{% static 'img/digital.jpg' %}" alt="digital advertising">
+            <img class="w-100" src="{% static 'img/digital.jpg' %}" title="Digital Advertising and Branding Services" alt="Digital marketing and business branding agency in Lagos, Nigeria - SEO, social media marketing, web design">
             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                 <div class="p-3" style="max-width: 900px;">
                     <span class="text-white text-uppercase mb-3 animated slideInDown you2">Digital Advertising</span><br><br>
                     <span class="display-3 text-white mb-md-4 animated zoomIn xy">Digital Advertising & Business Branding</span><br><br><br><br>
-                    <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Digital Quote</a>
-                    <a href="#" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Digital Details</a>
+                    <a href="{% url 'quote' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Digital Quote</a>
+                    <a href="{% url 'digital' %}" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Digital Details</a>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="w-100" src="{% static 'img/admission.jpg' %}" alt="digital branding">
+            <img class="w-100" src="{% static 'img/admission.jpg' %}" title="International University Admission Processing Services" alt="International admission processing and visa assistance for students - university applications, visa guidance, educational consulting">
             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                 <div class="p-3" style="max-width: 900px;">
                     <span class="text-white text-uppercase mb-3 animated slideInDown you2">Admission Processing</span><br><br>
@@ -163,7 +220,7 @@
             </div>
             <div class="col-lg-5" style="min-height: 500px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{% static 'img/about1.jpg' %}" style="object-fit: cover;" alt="software development">
+                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{% static 'img/about1.jpg' %}" style="object-fit: cover;" alt="D-ICT CHANNELS team - Professional IT training institute in Lagos, Nigeria" title="About D-ICT CHANNELS - Leading IT education and software development company" loading="lazy">
                 </div>
             </div>
         </div>
@@ -239,7 +296,7 @@
 
             <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static 'img/class.jpg' %}" style="object-fit: cover;" alt="international admission processing">
+                    <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static 'img/class.jpg' %}" style="object-fit: cover;" alt="Professional IT training classroom at D-ICT CHANNELS Lagos" title="Hands-on computer training classes in Festac Town" loading="lazy">
                 </div>
             </div>
 

@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Block access to admin areas
+Disallow: /admin/
+Disallow: /accounts/
+Disallow: /api/
+
+# Block access to static files (optional, as they're usually served directly)
+Disallow: /static/
+
+# Block access to media files (optional)
+Disallow: /media/
+
+# Allow access to sitemap
+Allow: /sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://dictchannels.com/sitemap.xml

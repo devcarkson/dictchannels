@@ -9,6 +9,9 @@
     <meta name="author" content="D-ICT CHANNELS">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{% block canonical_url %}https://dictchannels.com/{% endblock %}">
+
     <!-- Favicon -->
     <link href="{% static 'img/logo.jpg' %}" rel="icon">
     <link rel="apple-touch-icon" href="{% static 'img/logo.jpg' %}" />
@@ -32,6 +35,11 @@
 
     <!-- Template Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="{% static 'img/logo.jpg' %}" as="image">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
     <!-------- new css file created ----------------->
     <link href="{% static 'include/animate.css' %}" rel="stylesheet">
@@ -123,6 +131,62 @@
     </style>
 
     {% block extra_head %}{% endblock %}
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "D-ICT CHANNELS",
+        "description": "Leading IT training institute offering professional computer training, software development, digital advertising, and international admission processing services in Lagos, Nigeria.",
+        "url": "https://dictchannels.com",
+        "logo": "https://dictchannels.com/static/img/logo.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "4th Avenue, 1st Floor, Suite 15, Camet Star Plaza, Beside FCMB Bank",
+            "addressLocality": "Festac Town",
+            "addressRegion": "Lagos",
+            "postalCode": "100001",
+            "addressCountry": "NG"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+234-8083158563",
+            "contactType": "customer service",
+            "availableLanguage": "English"
+        },
+        "sameAs": [
+            "https://web.facebook.com/rolasofttech",
+            "https://www.linkedin.com/in/rolasofttech",
+            "https://www.instagram.com/rolasoftglobal",
+            "https://www.youtube.com/@rolasofttechnologies",
+            "https://www.tiktok.com/@rolasofttechnologies",
+            "https://twitter.com/RolasoftLimited"
+        ],
+        "offers": [
+            {
+                "@type": "Course",
+                "name": "Professional Computer Training",
+                "description": "Comprehensive IT training programs including software development, cybersecurity, data science, and digital marketing."
+            },
+            {
+                "@type": "Service",
+                "name": "Software Development",
+                "description": "Custom mobile app, web app, and desktop application development services."
+            },
+            {
+                "@type": "Service",
+                "name": "Digital Advertising & Branding",
+                "description": "Professional digital marketing and business branding solutions."
+            },
+            {
+                "@type": "Service",
+                "name": "International Admission Processing",
+                "description": "Assistance with university admissions and visa processing for international education."
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Spinner Start -->
@@ -264,7 +328,7 @@
                 {% if user.is_authenticated %}
                     <div class="d-flex align-items-center ms-2">
                         <span class="text-white me-1 small d-none d-lg-inline">Hi {{ user.get_full_name|default:user.username|truncatechars:8 }}</span>
-                        <a href="{% url 'student_dashboard' %}" class="btn btn-primary py-1 px-2 me-1 btn-sm" title="Dashboard"><i class="fas fa-tachometer-alt"></i></a>
+                        <a href="{% url 'student_dashboard' %}" class="btn btn-primary py-1 px-2 me-1 btn-sm" title="Student Dashboard"><i class="fas fa-tachometer-alt"></i></a>
                         <a href="{% url 'student_logout' %}" class="btn btn-outline-primary py-1 px-2 btn-sm" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
                     </div>
                 {% else %}

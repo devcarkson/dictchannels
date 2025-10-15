@@ -16,10 +16,10 @@ from .models import (
 from .forms import ContactForm, NewsletterForm, QuoteForm, ServiceInquiryForm, StudentProfileForm, StudentRegistrationForm
 
 def home(request):
-    testimonials = Testimonial.objects.all()
-    services = Service.objects.all()
+    testimonials = Testimonial.objects.select_related().all()[:6]  # Limit testimonials for performance
+    services = Service.objects.select_related().all()
     newsletter_form = NewsletterForm()
-    courses = Course.objects.all()
+    courses = Course.objects.select_related().all()[:8]  # Limit courses for performance
     context = {
         'testimonials': testimonials,
         'services': services,
@@ -76,7 +76,7 @@ Submitted at: {service_inquiry.submitted_at}
     else:
         form = ServiceInquiryForm()
 
-    services = Service.objects.all()
+    services = Service.objects.select_related().all()
     newsletter_form = NewsletterForm()
     context = {
         'services': services,
@@ -86,7 +86,7 @@ Submitted at: {service_inquiry.submitted_at}
     return render(request, 'pages/services.html', context)
 
 def courses(request):
-    courses = Course.objects.all()
+    courses = Course.objects.select_related().all()
     newsletter_form = NewsletterForm()
     context = {
         'courses': courses,
@@ -190,7 +190,7 @@ def courses_customized(request):
     return render(request, 'courses/customized.html', context)
 
 def events(request):
-    events = Event.objects.all()
+    events = Event.objects.select_related().all()
     newsletter_form = NewsletterForm()
     context = {
         'events': events,
@@ -260,7 +260,7 @@ Submitted at: {contact_submission.submitted_at}
     return render(request, 'pages/contact.html', context)
 
 def team(request):
-    team_members = TeamMember.objects.filter(is_active=True)
+    team_members = TeamMember.objects.filter(is_active=True).select_related()
     newsletter_form = NewsletterForm()
     context = {
         'team_members': team_members,
@@ -269,7 +269,7 @@ def team(request):
     return render(request, 'pages/team.html', context)
 
 def testimonial(request):
-    testimonials = Testimonial.objects.all()
+    testimonials = Testimonial.objects.select_related().all()
     newsletter_form = NewsletterForm()
     context = {
         'testimonials': testimonials,

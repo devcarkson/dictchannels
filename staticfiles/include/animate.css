@@ -1,0 +1,69 @@
+
+
+     
+/*  
+ @keyframes multicolor
+{
+0% {color:#eb6424;}
+40% {color:orangered;}
+60%{color:black;}
+80% {color:orange;}
+}
+@-webkit-keyframes multicolor 
+{
+0% {color:darkgeen;}
+40% {color:orangered;}
+60%{color:#eb6424;}
+80% {color:orangered;}
+}
+
+		.style2{
+animation:multicolor 5s infinite;
+-webkit-animation:multicolor 5s infinite; 
+}
+ */
+
+
+ /* @keyframes smoothMulticolor {
+    0% { color: #eb6424; }
+    25% { color: #ff6b35; }
+    50% { color: #f21b1b; }
+    75% { color: #e71d36; }
+    100% { color: #eb6424; }
+}
+
+@-webkit-keyframes smoothMulticolor {
+    0% { color: #eb6424; }
+    25% { color: #ff6b35; }
+    50% { color: #f21b1b; }
+    75% { color: #e71d36; }
+    100% { color: #eb6424; }
+}
+
+.style2 {
+    animation: smoothMulticolor 4s ease-in-out infinite;
+    -webkit-animation: smoothMulticolor 4s ease-in-out infinite;
+} */
+
+
+@keyframes pulseColors {
+    0% { color: #ff0000; transform: scale(1); }
+    25% { color: #00ff00; transform: scale(1.05); }
+    50% { color: #0000ff; transform: scale(1); }
+    75% { color: #ffff00; transform: scale(1.05); }
+    100% { color: #ff0000; transform: scale(1); }
+}
+
+@-webkit-keyframes pulseColors {
+    0% { color: #ff0000; -webkit-transform: scale(1); }
+    25% { color: #00ff00; -webkit-transform: scale(1.05); }
+    50% { color: #0000ff; -webkit-transform: scale(1); }
+    75% { color: #ffff00; -webkit-transform: scale(1.05); }
+    100% { color: #ff0000; -webkit-transform: scale(1); }
+}
+
+.style2 {
+    animation: pulseColors 3s ease-in-out infinite;
+    -webkit-animation: pulseColors 3s ease-in-out infinite;
+    display: inline-block;
+}

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'compressor',
     'pages',
     'courses',
     'testimonials',
@@ -54,8 +55,8 @@ JAZZMIN_SETTINGS = {
     "welcome_sign": "Welcome to D-ICT Channels Dashboard",
     "site_brand": "D-ICT Channels",
     "show_ui_builder": True, 
-    "site_logo": "img/logo.jpg",
-    "login_logo": "img/logo.jpg",
+    # "site_logo": "img/logo.jpg",
+    # "login_logo": "img/logo.jpg",
     "custom_css": "css/custom_login.css",
     # "login_logo_dark": None,
 }
@@ -65,15 +66,15 @@ JAZZMIN_UI_TWEAKS = {
     "footer_small_text": False,
     "body_small_text": False,
     "brand_small_text": False,
-    "brand_colour": False,
-    "accent": "accent-primary",
-    "navbar": "navbar-blue",
+    "brand_colour": "navbar-danger",
+    "accent": "accent-lime",
+    "navbar": "navbar-danger navbar-dark",
     "no_navbar_border": False,
     "navbar_fixed": True,
     "layout_boxed": False,
     "footer_fixed": False,
     "sidebar_fixed": True,
-    "sidebar": "sidebar-dark-primary",
+    "sidebar": "sidebar-dark-danger",
     "sidebar_nav_small_text": False,
     "sidebar_disable_expand": True,
     "sidebar_nav_child_indent": False,
@@ -83,8 +84,8 @@ JAZZMIN_UI_TWEAKS = {
     "theme": "darkly",  # Default Bootstrap theme
     "dark_mode_theme": "",  # Setting the dark mode theme
     "button_classes": {
-        "primary": "btn-outline-primary",
-        "secondary": "btn-outline-secondary",
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
         "info": "btn-outline-info",
         "warning": "btn-outline-warning",
         "danger": "btn-outline-danger",
@@ -98,6 +99,7 @@ AUTH_USER_MODEL = 'pages.Student'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.gzip.GZipMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -185,22 +187,59 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # for production
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'gjwnjybm/public_html/media/')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# # MEDIA_ROOT = os.path.join(BASE_DIR, 'gjwnjybm/public_html/media/')
 
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'home/gjwnjybm/public_html/static/') 
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'home/gjwnjybm/public_html/assets/') 
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+    
+# ]
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Caching configuration
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
+
+# Django Compressor settings
+COMPRESS_ENABLED = True
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSMinFilter',
+]
+COMPRESS_JS_FILTERS = [
+    'compressor.filters.jsmin.JSMinFilter',
+]
+COMPRESS_STORAGE = 'compressor.storage.GzipCompressorFileStorage'
+COMPRESS_URL = STATIC_URL
+COMPRESS_OFFLINE = True
+
+# Cache settings for static files
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'home/gjwnjybm/public_html/static/') 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'home/gjwnjybm/public_html/assets/') 
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+]
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+# Security and performance settings
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = 'DENY'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

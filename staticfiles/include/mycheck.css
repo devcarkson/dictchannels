@@ -1,0 +1,78 @@
+
+
+         .ky{
+
+            height: 150px;
+ }
+ 
+ 
+
+.ty{
+
+    width: 60px; 
+    height: 60px;
+}
+
+
+.ny{
+
+    width: 15px; 
+    height: 60px;
+}
+
+
+.boy{
+
+    font-size: 25px;
+}
+
+
+.you{
+
+    font-size: 35px;
+}
+
+.sy{
+
+    font-size: 30px;
+}
+
+
+.ola{
+
+    font-size: 20px;
+}
+
+.xy{
+
+    font-size: 25px;
+}
+
+.yx{
+
+    font-size: 30px;
+}
+
+
+.you2{
+
+    font-size: 25px;
+}
+
+.pa{
+
+    font-size: 15px;
+}
+
+.sr-only{
+   position:absolute;
+   left:-10000px;
+   top:auto;
+   width:1px;
+   height:1px;
+   overflow:hidden;
+}
+
+
+
+

@@ -48,3 +48,8 @@ application = get_wsgi_application()
 
 ///////////////////////////////////////////////
 
+
+https://analytics.google.com/
+
+https://search.google.com/search-console
+
